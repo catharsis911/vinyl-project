@@ -1,20 +1,21 @@
-import { useState } from 'react';
-import React, { FC } from 'react';
 
+import React, { FC, useState } from 'react';
+import AddVinylForm from './Components/AddVinylForm';
+/*
 type Order = {
   title: string,
   quantity: number
-}
+}*/
 
 const App: FC = () => {
-  const [count, setCount] = useState(0)
+  /*const [count, setCount] = useState(0)*/
 
   return (
     <>
-      
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <div className="wrap">
+        <span className="heading">Vinyl Catalog</span>
+        <AddVinylForm/>
+      </div>
     </>
   )
 }
