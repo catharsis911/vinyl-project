@@ -12,12 +12,22 @@ import React, {FC, useState, ChangeEvent, FormEvent} from 'react'
     useState<{title: string, price: string, img: string,}>(initState);
 
     const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-        console.log('handle change >>', e.target)
+        
+        const {name, value} = e.target;
+        
+        setNewVinyl({
+          ...newVinyl,
+          [name]: value
+        });
+
     }
     
     const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
         console.log('handle change >>', e.target)
     }
+
+    console.log('new vinyl', newVinyl)
 
   return (
     <form onSubmit={handleSubmit}>
