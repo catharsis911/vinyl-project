@@ -1,4 +1,10 @@
 import React, {FC, useState, ChangeEvent, FormEvent} from 'react'
+import Vinyl from '../models/Vinyl';
+
+
+ interface AddVinylFormProps {
+  addVinyl: (newVinyl: Vinyl) => void;
+ }
 
   const initState = {
     title: '',
@@ -6,7 +12,7 @@ import React, {FC, useState, ChangeEvent, FormEvent} from 'react'
     img: '',
   }
   
-  const AddVinylForm: FC = () => {
+  const AddVinylForm: FC<AddVinylFormProps> = ({addVinyl}) => {
 
     const[newVinyl, setNewVinyl] = 
     useState<{title: string, price: string, img: string,}>(initState);
@@ -24,7 +30,17 @@ import React, {FC, useState, ChangeEvent, FormEvent} from 'react'
     
     const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        console.log('handle change >>', e.target)
+       
+        const {title, price, img} = newVinyl;
+
+        if(title && price && img) {
+          addVinyl({
+            title,
+            price: Number(price),
+            img,
+            id: Date.now()
+          })
+        }
     }
 
     console.log('new vinyl', newVinyl)

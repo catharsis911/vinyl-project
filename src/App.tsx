@@ -1,20 +1,21 @@
 
 import React, { FC, useState } from 'react';
 import AddVinylForm from './Components/AddVinylForm';
-/*
-type Order = {
-  title: string,
-  quantity: number
-}*/
+import Vinyl from './models/Vinyl';
 
 const App: FC = () => {
-  /*const [count, setCount] = useState(0)*/
+  const [vinylList, setVinylList] = useState<Vinyl[]>([])
 
+  const addVinyl = (newVinyl: Vinyl) => {
+    setVinylList([...vinylList, newVinyl]);
+  }
   return (
     <>
       <div className="wrap">
         <span className="heading">Vinyl Catalog</span>
-        <AddVinylForm/>
+        <AddVinylForm
+         addVinyl={addVinyl}
+        />
       </div>
     </>
   )
