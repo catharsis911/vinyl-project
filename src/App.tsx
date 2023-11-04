@@ -10,6 +10,8 @@ const App: FC = () => {
   const addVinyl = (newVinyl: Vinyl) => {
     setVinylList([...vinylList, newVinyl]);
   }
+
+  
   return (
     <>
       <div className="wrap">
