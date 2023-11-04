@@ -6,14 +6,20 @@ import EditVinylForm from './EditVinylForm';
 
 interface SingleVinylProps {
     vinyl: Vinyl;
+    updateVinyl: (newVinyl: Vinyl) => void;
+    deleteVinyl: (id: number) => void;
 }
 
-const SingleVinyl: FC<SingleVinylProps> = ({vinyl}) => {
+const SingleVinyl: FC<SingleVinylProps> = ({vinyl, updateVinyl, deleteVinyl}) => {
 
  const [edit, setEdit] = useState<boolean>(false)
 
  const handleToggleEdit = () => {
     setEdit(!edit);
+ }
+
+ const handleDelete = () => {
+    deleteVinyl(vinyl.id);
  }
 
   return (
@@ -23,11 +29,15 @@ const SingleVinyl: FC<SingleVinylProps> = ({vinyl}) => {
      <span>{vinyl.price} $</span>
      <div className='vinyl-controls'>
       <BiEditAlt onClick={handleToggleEdit}/>
-      <RiDeleteBin6Line/>
+      <RiDeleteBin6Line onClick= {handleDelete}/>
      </div>
 
      {edit 
-      ? <EditVinylForm data={vinyl}/>
+      ? <EditVinylForm 
+          data={vinyl}
+          updateVinyl={updateVinyl}
+          handleToggleEdit={handleToggleEdit}
+        />
       : null}
     </div>
   )

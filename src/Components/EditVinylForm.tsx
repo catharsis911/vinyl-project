@@ -4,10 +4,12 @@ import Vinyl from '../models/Vinyl';
 
  interface EditVinylFormProps {
   data: Vinyl;
+  updateVinyl: (newVinyl: Vinyl) => void;
+  handleToggleEdit: () => void;
  }
 
 
-  const EditVinylForm: FC<EditVinylFormProps> = ({data}) => {
+  const EditVinylForm: FC<EditVinylFormProps> = ({data, updateVinyl, handleToggleEdit}) => {
 
     const[editVinyl, setEditVinyl] = 
     useState<Vinyl>(data);
@@ -29,7 +31,8 @@ import Vinyl from '../models/Vinyl';
         const {title, price, img} = editVinyl;
 
         if(title && price && img) {
-          console.log('edit vinyl', editVinyl);
+            updateVinyl(editVinyl);
+            handleToggleEdit();
         }
     }
 

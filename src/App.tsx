@@ -11,7 +11,15 @@ const App: FC = () => {
     setVinylList([...vinylList, newVinyl]);
   }
 
-  
+  const updateVinyl = (newVinyl: Vinyl) => {
+    setVinylList(vinylList.map((vinyl) => 
+    (vinyl.id === newVinyl.id ? newVinyl : vinyl)));
+  }
+
+  const deleteVinyl = (id: number) => {
+    const newVinylList = vinylList.filter(vinyl => vinyl.id !== id);
+    setVinylList(newVinylList);
+  }
   return (
     <>
       <div className="wrap">
@@ -21,6 +29,8 @@ const App: FC = () => {
         />
         <DisplayVinyl 
         vinylList={vinylList}
+        updateVinyl={updateVinyl}
+        deleteVinyl={deleteVinyl}
         />
       </div>
     </>
