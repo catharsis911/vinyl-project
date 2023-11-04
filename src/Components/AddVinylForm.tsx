@@ -39,7 +39,8 @@ import Vinyl from '../models/Vinyl';
             price: Number(price),
             img,
             id: Date.now()
-          })
+          });
+          setNewVinyl(initState);
         }
     }
 
