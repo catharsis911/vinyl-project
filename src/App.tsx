@@ -22,7 +22,7 @@ const App: FC = () => {
   }
   return (
     <>
-      <div className="wrap">
+      <div className="wrap ">
         <span className="heading">Vinyl Catalog</span>
         <AddVinylForm
          addVinyl={addVinyl}
