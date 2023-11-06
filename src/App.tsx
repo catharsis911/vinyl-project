@@ -22,8 +22,8 @@ const App: FC = () => {
   }
   return (
     <>
-      <div className="wrap ">
-        <span className="heading">Vinyl Catalog</span>
+      <div className=" wrap flex max-w-[900px] mx-0 my-auto flex-col items-center">
+        <span className="heading ">Vinyl Catalog</span>
         <AddVinylForm
          addVinyl={addVinyl}
         />
