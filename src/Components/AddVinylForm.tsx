@@ -64,7 +64,7 @@ import Vinyl from '../models/Vinyl';
           value={newVinyl.price}
         />
 
-        <input
+        <input className='w-[100%]'
           name="img"
           type="text"
           placeholder="Image"
