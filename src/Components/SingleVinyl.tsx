@@ -23,7 +23,7 @@ const SingleVinyl: FC<SingleVinylProps> = ({vinyl, updateVinyl, deleteVinyl}) =>
  }
 
   return (
-    <div className='vinyl'>
+    <div className='vinyl bg-white border-[1px] border-[#ededed] flex flex-col relative p-[12px] mb-[22px]'>
      <img src={'/images/${vynil.img}'} alt={vinyl.title}/>
      <h2>{vinyl.title}</h2>
      <span>{vinyl.price} $</span>

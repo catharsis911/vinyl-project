@@ -47,7 +47,7 @@ import Vinyl from '../models/Vinyl';
     console.log('new vinyl', newVinyl)
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className='flex border-[2px] border-[#000] max-w-[520px] overflow-hidden flex-wrap'>
         <input
           name="title"
           type="text"
