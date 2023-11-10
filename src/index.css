@@ -24,7 +24,14 @@ form input {
   padding: 15px;
   line-height: 1;
   font-size: 17px;
-  border: 0;
   background-color: #fff;
+}
+button,
+input[type=submit] {
+  text-transform: uppercase;
+  padding: 8px 15px;
+  border: none;
   text-align: center;
+  font-size: 14px;
+  cursor: pointer;
 }
