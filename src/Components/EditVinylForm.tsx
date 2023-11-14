@@ -64,7 +64,7 @@ import Vinyl from '../models/Vinyl';
           onChange={handleChange}
           value={editVinyl.img}
         />
-        <button type="submit">Подтвердить</button>
+        <button type="submit">Confirm</button>
     </form>
   )
 }
