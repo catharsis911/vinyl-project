@@ -25,7 +25,7 @@ const SingleVinyl: FC<SingleVinylProps> = ({vinyl, updateVinyl, deleteVinyl}) =>
   return (
     <div className='vinyl bg-white border-[1px] border-[#ededed] flex flex-col relative p-[12px] m-[52px] w-[350px] mx-auto items-center rounded-xl'>
      <img src={`/images/${vinyl.img}`} alt={vinyl.title} className='w-[252px] h-200px object-contain'/>
-     <h2>{vinyl.title}</h2>
+     <h2 className='my-[40px] text-center bg-[#f0f8ff] inline leading-4 p-3 text-[27px] '>{vinyl.title}</h2>
      <span>{vinyl.price} $</span>
      <div className='vinyl-controls'>
       <BiEditAlt onClick={handleToggleEdit}/>
