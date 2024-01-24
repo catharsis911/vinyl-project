@@ -1,5 +1,5 @@
 
-import React, { FC, useState } from 'react';
+import { FC, useState } from 'react';
 import AddVinylForm from './Components/AddVinylForm';
 import Vinyl from './models/Vinyl';
 import DisplayVinyl from './Components/DisplayVinyl';

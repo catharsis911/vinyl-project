@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import { FC } from 'react'
 import Vinyl from '../models/Vinyl'
 import SingleVinyl from './SingleVinyl';
 
